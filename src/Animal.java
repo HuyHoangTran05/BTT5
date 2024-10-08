@@ -1,37 +1,66 @@
-interface Animal {
-    void swim();
-    void walk();
+abstract class Animal {
+    String name;
+    public Animal(String name) {
+
+        this.name = name;
+    }
+     public String getName() {
+
+        return name;
+     }
+
+     public abstract boolean swim();
+     public abstract boolean walk();
 }
 
-class Pig implements Animal {
-    @Override
-    public void walk() {
-        System.out.println("Pig");
+class Pig extends Animal {
+
+    public Pig(String name) {
+        super(name);
     }
     @Override
-    public void swim() {
+    public boolean walk(){
 
+        return true;
+    }
+    @Override
+    public boolean swim() {
+
+        return false;
     }
 }
 
-class Duck implements Animal {
-    public void swim() {
-        System.out.println("Duck");
+class Duck extends Animal {
+
+    public Duck (String name) {
+        super(name);
     }
-    public void walk() {
-        System.out.println("Duck");
+    @Override
+    public boolean walk(){
+
+        return true;
+    }
+    @Override
+    public boolean swim() {
+
+        return true;
     }
 }
 
-class Fish implements Animal {
-    @Override
-    public void swim() {
-        System.out.println("Fish");
+class Fish extends Animal {
+
+    public Fish (String name) {
+        super(name);
     }
-
     @Override
-    public void walk() {
+    public boolean walk(){
 
+        return false;
+    }
+    @Override
+    public boolean swim() {
+
+        return true;
     }
 }
 
